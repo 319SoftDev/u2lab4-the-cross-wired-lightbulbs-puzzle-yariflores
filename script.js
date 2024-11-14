@@ -121,3 +121,57 @@ const change67= () => {
 switch9.addEventListener('change', change67);
 
 // master switch 
+const masterswitch = document.querySelector("#switchMaster");
+
+const master= () => {
+    const light1 = document.querySelector("#lightbulb1");
+    const light4 = document.querySelector("#lightbulb4");
+    light1.classList.toggle("active");
+    light4.classList.toggle("active");
+    const light2 = document.querySelector("#lightbulb2");
+    const light3 = document.querySelector("#lightbulb3");
+    light2.classList.toggle("active");
+    light3.classList.toggle("active");
+    const light5 = document.querySelector("#lightbulb5");
+    const light9 = document.querySelector("#lightbulb9");
+    light5.classList.toggle("active");
+    light9.classList.toggle("active");
+    const light6 = document.querySelector("#lightbulb6");
+    const light7 = document.querySelector("#lightbulb7");
+    light6.classList.toggle("active");
+    light7.classList.toggle("active");
+    const light8 = document.querySelector("#lightbulb8");
+    light8.classList.toggle("active");
+}
+masterswitch.addEventListener('change', master);
+ 
+
+console.log("Script Running.");
+
+
+
+// Add a restart
+function restart() {
+  // Turn all switches "on" 
+  const allSwitches = document.querySelectorAll('input[type="checkbox"]');
+  allSwitches.forEach(switchElement => {
+    switchElement.checked = true; 
+  });
+
+  // Turn all lights off (gray)
+  const allLights = document.querySelectorAll('.lightbulb');
+  allLights.forEach(light => {
+    light.classList.remove("active"); 
+  });
+}
+
+document.querySelector("#restartBtn").addEventListener("click", restart);
+
+
+
+
+
+
+
+
+
